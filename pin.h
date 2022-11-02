@@ -14,6 +14,7 @@ class DigitalPin : public Pin
     private:
         bool currentstate;
         bool previousstate;
+        uint8_t mode;
 
     public:
         bool isHIGH();
@@ -21,12 +22,23 @@ class DigitalPin : public Pin
         bool EDGE();
         bool posEDGE();
         bool negEDGE();
-        DigitalPin(unsigned short int newpinnumber, uint8_t mode) : Pin(newpinnumber){
-            pinMode(pinnumber, mode);
+        void setOut(bool value);
+        DigitalPin(unsigned short int newpinnumber, uint8_t newmode) : Pin(newpinnumber){
+            pinMode(pinnumber, newmode);
+            mode = newmode;
         };//Sets Pinnumber (calling Pin Constructor)
 };
 
 class AnalogPin : Pin
 {
-    //not needed here
+    private:
+        uint8_t mode;
+
+    public:
+        int analogValue();
+        void analogOut(int value);
+        AnalogPin(unsigned short int newpinnumber, uint8_t newmode) : Pin(newpinnumber){
+            pinMode(pinnumber, newmode);
+            mode = newmode;
+        }
 };
