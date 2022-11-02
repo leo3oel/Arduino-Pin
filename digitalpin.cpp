@@ -32,7 +32,7 @@ bool DigitalPin::EDGE()
 }
 
 bool DigitalPin::posEDGE()
-
+{
     //Returns 1 if state changed between 0 to 1
     previousstate = currentstate;
     currentstate = digitalRead(pinnumber);
