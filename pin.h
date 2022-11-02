@@ -12,8 +12,8 @@ class Pin
 class DigitalPin : public Pin
 {
     private:
-        bool currentstate;
-        bool previousstate;
+        bool currentstate = 0;
+        bool previousstate = 0;
         uint8_t mode;
 
     public:
