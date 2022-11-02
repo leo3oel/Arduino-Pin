@@ -1,4 +1,4 @@
-# Pin library
+# Pin Library
 Library um Pins anzulegen. Es können digitale Pins und AnalogePins definiert werden. 
 
 Die Library initialisiert die Pins und ergänzt bei digitalen Pins die Möglichkeit Flankenabfragen durchzuführen.
