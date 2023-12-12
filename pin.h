@@ -3,7 +3,7 @@
 class Pin
 {
     protected:
-        unsigned short int pinnumber;
+        unsigned short int pinNumber;
 
     public:
         Pin (unsigned short int);
@@ -12,8 +12,8 @@ class Pin
 class DigitalPin : public Pin
 {
     private:
-        bool currentstate = 0;
-        bool previousstate = 0;
+        bool currentState = 0;
+        bool previousState = 0;
         uint8_t mode;
 
     public:
@@ -23,10 +23,10 @@ class DigitalPin : public Pin
         bool posEDGE();
         bool negEDGE();
         void setOut(bool value);
-        DigitalPin(unsigned short int newpinnumber, uint8_t newmode) : Pin(newpinnumber){
-            pinMode(pinnumber, newmode);
-            mode = newmode;
-        };//Sets Pinnumber (calling Pin Constructor)
+        DigitalPin(unsigned short int newPinNumber, uint8_t newMode) : Pin(newPinNumber){
+            pinMode(pinNumber, newMode);
+            mode = newMode;
+        };
 };
 
 class AnalogPin : Pin
@@ -37,8 +37,8 @@ class AnalogPin : Pin
     public:
         int analogValue();
         void analogOut(int value);
-        AnalogPin(unsigned short int newpinnumber, uint8_t newmode) : Pin(newpinnumber){
-            pinMode(pinnumber, newmode);
-            mode = newmode;
+        AnalogPin(unsigned short int newPinNumber, uint8_t newMode) : Pin(newPinNumber){
+            pinMode(pinNumber, newMode);
+            mode = newMode;
         }
 };

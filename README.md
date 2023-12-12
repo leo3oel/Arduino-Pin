@@ -1,39 +1,39 @@
 # Pin Library
-Library um Pins anzulegen. Es können digitale Pins und AnalogePins definiert werden. 
+Library for managing pins. It allows the definition of both digital and analog pins.
 
-Die Library initialisiert die Pins und ergänzt bei digitalen Pins die Möglichkeit Flankenabfragen durchzuführen.
+The library initializes the pins and adds the capability to perform edge detection for digital pins.
 
 ## Installation
-1. Ordner `pin` im Arduino libraries Ordner erstellen
-    - Dieser befindet sich idR unter `C:\Program Files (x86)\Arduino\libraries`
-2. Dieses Repository clonen
+1. Create a folder named `pin` in the Arduino libraries folder.
+   - This folder is typically located at `C:\Program Files (x86)\Arduino\libraries`.
+2. Clone this repository.
 
-## Aufruf im Programm
-Die Library kann nun mit `#include <pin.h>` dem Programmcode hinzugefügt werden
+## Inclusion in the Program
+The library can now be added to the program code using `#include <pin.h>`.
 
-## Verwendung
-### Pins definieren
-Für digitale Pins:<br>
+## Usage
+### Defining Pins
+For digital pins:<br>
 `DigitalPin objectname(pinnumber, INPUT/OUTPUT)`
 
-Für analoge Pins:<br>
+For analog pins:<br>
 `AnalogPin objectname(pinnumber, INPUT/OUTPUT)`
 
-Nun sind die Pins angelegt und können verwendet werden.
+Now, the pins are defined and can be used.
 
-### Funktionen
-Für digitale Eingangspins:
-- `isHIGH()` gibt TRUE zurück wenn Pin im HIGH Zustand
-- `isLOW()` gibt TRUE zurück wenn Pin im LOW Zustand
-- `EDGE()` gibt TRUE zurück wenn der Zustand am Pin zwischen zwei Aufrufen gewechselt ist
-- `posEDGE()` gibt TRUE zurück wenn der Zustand am Pin zwischen zwei Aufrufen von LOW nach HIGH gewechselt ist
-- `negEDGE()` gibt TRUE zurück wenn der Zustand am Pin zwischen zwei Aufrufen von HIGH nach LOW gewechselt ist
+### Functions
+For digital input pins:
+- `isHIGH()` returns TRUE if the pin is in a HIGH state.
+- `isLOW()` returns TRUE if the pin is in a LOW state.
+- `EDGE()` returns TRUE if the state of the pin has changed between two calls.
+- `posEDGE()` returns TRUE if the state of the pin has changed from LOW to HIGH between two calls.
+- `negEDGE()` returns TRUE if the state of the pin has changed from HIGH to LOW between two calls.
 
-Für digitale Ausgangspins:
-- `setOut(bool value)` setzt Ausgang auf value.
+For digital output pins:
+- `setOut(bool value)` sets the output to the specified value.
 
-Für analoge Eingangspins:
-- `analogValue()` gibt Analogwert zurück
+For analog input pins:
+- `analogValue()` returns the analog value.
 
-Für analoge Ausgangspins:
-- `analogOut(int value)` setzt Ausgang auf value. 0<=value<256
+For analog output pins:
+- `analogOut(int value)` sets the output to the specified value. 0<=value<256

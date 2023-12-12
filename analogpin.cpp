@@ -2,10 +2,10 @@
 
 int AnalogPin::analogValue()
 {
-    return analogRead(pinnumber);
+    return analogRead(pinNumber);
 }
 
 void AnalogPin::analogOut(int value)
 {
-    analogWrite(pinnumber, value);
+    analogWrite(pinNumber, value);
 }

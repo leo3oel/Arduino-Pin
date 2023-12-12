@@ -1,7 +1,6 @@
 #include "pin.h"
 
-// Konstruktor
-Pin::Pin(unsigned short int newpinnumber)
+Pin::Pin(unsigned short int newPinNumber)
 {
-    pinnumber = newpinnumber;
+    pinNumber = newPinNumber;
 } 
