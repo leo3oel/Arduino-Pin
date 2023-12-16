@@ -7,6 +7,7 @@ class Pin
 
     public:
         Pin (unsigned short int);
+        unsigned short getPinNumber();
 };
 
 class DigitalPin : public Pin
