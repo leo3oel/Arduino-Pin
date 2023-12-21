@@ -1,4 +1,8 @@
+#ifdef ARDUINO
 #include "Arduino.h"
+#else
+#include "debugPlaceholder.h"
+#endif
 
 class Pin
 {
@@ -15,7 +19,7 @@ class DigitalPin : public Pin
     private:
         bool currentState = 0;
         bool previousState = 0;
-        uint8_t mode;
+        unsigned short mode;
 
     public:
         bool isHIGH();
@@ -24,7 +28,7 @@ class DigitalPin : public Pin
         bool posEDGE();
         bool negEDGE();
         void setOut(bool value);
-        DigitalPin(unsigned short int newPinNumber, uint8_t newMode) : Pin(newPinNumber){
+        DigitalPin(unsigned short int newPinNumber, unsigned short newMode) : Pin(newPinNumber){
             pinMode(pinNumber, newMode);
             mode = newMode;
         };
@@ -33,12 +37,12 @@ class DigitalPin : public Pin
 class AnalogPin : Pin
 {
     private:
-        uint8_t mode;
+        unsigned short mode;
 
     public:
         int analogValue();
         void analogOut(int value);
-        AnalogPin(unsigned short int newPinNumber, uint8_t newMode) : Pin(newPinNumber){
+        AnalogPin(unsigned short int newPinNumber, unsigned short newMode) : Pin(newPinNumber){
             pinMode(pinNumber, newMode);
             mode = newMode;
         }
