@@ -1,3 +1,6 @@
+#ifndef ARDUNIO_PIN
+#define ARDUNIO_PIN
+
 #ifdef ARDUINO
 #include "Arduino.h"
 #else
@@ -47,3 +50,5 @@ class AnalogPin : Pin
             mode = newMode;
         }
 };
+
+#endif
